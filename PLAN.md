@@ -5,7 +5,7 @@ Raw file: `data/raw/StarWars.csv` (downloaded from the FiveThirtyEight GitHub re
 ## 1. What the raw file looks like
 
 - 1,188 physical lines: 1 header line, 1 sub-header line, and 1,186 respondents. The file has no trailing newline. Read naively, pandas gives shape (1187, 38).
-- 38 columns. Only 10 header cells are distinct question texts. The other 28 come out as `Unnamed: N` because each multi-part question puts its text above the first sub-column only.
+- 38 columns. Only 15 header cells are distinct question texts. The other 23 come out as `Unnamed: N` because each multi-part question puts its text above the first sub-column only.
 - RespondentID is a 10-digit integer from 3288372923 to 3292879998. Every row has one, none repeat, and the file is sorted by ID in descending order.
 
 ## 2. Every data problem found, and the fix for each
@@ -15,7 +15,7 @@ Raw file: `data/raw/StarWars.csv` (downloaded from the FiveThirtyEight GitHub re
 | 1 | **The file is not UTF-8.** | `utf-8` decoding fails at byte 641 (`0x8c`). Only 2 bytes in the whole file are above 127. | Read with `encoding="cp1252"`. |
 | 2 | **Garbage characters in a column name.** | Header 31 is `Do you consider yourself to be a fan of the Expanded Universe?` followed by bytes `0x8c 0xe6` (cp1252 `Œæ`), which is mojibake. | Every column is renamed explicitly by position (see §3), so the garbage is dropped. I also check that the header text matches what we expect, so a different file fails loudly. |
 | 3 | **A second header row sits inside the data.** | Row 0 holds `Response` or a film or character name in every column, and RespondentID is NaN. | Use the sub-header only to check column order (each film and character label must match its position), then drop it. |
-| 4 | **28 `Unnamed: N` columns.** | Columns 4–8, 10–14 and 16–28. | Give them meaningful names by position (§3). |
+| 4 | **23 `Unnamed: N` columns.** | Columns 4–8, 10–14 and 16–28. | Give them meaningful names by position (§3). |
 | 5 | **Multi-select "which films have you seen" is spread across 6 columns.** The value is the film title or NaN. | For example, col 3 holds `Star Wars: Episode I  The Phantom Menace` 673 times and NaN 513 times. | `seen_epN = column.notna()`, stored as a boolean. I first check that each column holds only one distinct non-null value and that it is the expected title. |
 | 6 | **Film titles have a double space** where a dash was stripped (`Episode I  The Phantom Menace`). | Found in the sub-header for Episodes I–IV. | Not carried into the data. Titles are only used for the column-order check, after whitespace is collapsed. |
 | 7 | **Rankings are stored as text** (`'1'`…`'6'`). | Read with `dtype=str`. | `pd.to_numeric(..., errors="raise")` into nullable `Int64`, then check the values are in {1..6}. |
