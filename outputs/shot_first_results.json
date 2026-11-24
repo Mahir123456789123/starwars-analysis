@@ -1,0 +1,87 @@
+{
+  "question": "Q3: Who shot first (Han or Greedo), and does it differ by gender?",
+  "units_note": "keys ending in _pct / pct_* are percentages (0-100, 1 decimal); shares are proportions (0-1)",
+  "overall": {
+    "n_respondents": 1186,
+    "n_answered": 828,
+    "n_blank": 358,
+    "counts": {
+      "han": 325,
+      "greedo": 197,
+      "dont_understand": 306
+    },
+    "pct_of_answered": {
+      "han": 39.3,
+      "greedo": 23.8,
+      "dont_understand": 37.0
+    },
+    "n_han_or_greedo": 522,
+    "pct_of_han_or_greedo": {
+      "han": 62.3,
+      "greedo": 37.7
+    }
+  },
+  "by_gender": {
+    "male": {
+      "n_answered": 423,
+      "counts": {
+        "han": 200,
+        "greedo": 103,
+        "dont_understand": 120
+      },
+      "row_pct": {
+        "han": 47.3,
+        "greedo": 24.3,
+        "dont_understand": 28.4
+      },
+      "n_han_or_greedo": 303,
+      "han_share_of_han_or_greedo_pct": 66.0
+    },
+    "female": {
+      "n_answered": 397,
+      "counts": {
+        "han": 122,
+        "greedo": 90,
+        "dont_understand": 185
+      },
+      "row_pct": {
+        "han": 30.7,
+        "greedo": 22.7,
+        "dont_understand": 46.6
+      },
+      "n_han_or_greedo": 212,
+      "han_share_of_han_or_greedo_pct": 57.5
+    }
+  },
+  "n_blank_gender_among_answered_excluded": 8,
+  "n_blank_gender_counts_by_answer": {
+    "han": 3,
+    "greedo": 4,
+    "dont_understand": 1
+  },
+  "chi_square_gender_x_shot_first_3cat": {
+    "n": 820,
+    "chi2": 32.831,
+    "dof": 2,
+    "p_value": 7.43e-08,
+    "cramers_v": 0.2,
+    "min_expected_count": 93.44
+  },
+  "chi_square_gender_x_han_vs_greedo": {
+    "n": 515,
+    "chi2": 3.809,
+    "dof": 1,
+    "p_value": 0.051,
+    "cramers_v": 0.086,
+    "min_expected_count": 79.449
+  },
+  "han_share_difference_male_minus_female": {
+    "description": "male minus female Han share among Han+Greedo answerers (unpooled SE, normal approx)",
+    "male_han_share": 0.66,
+    "female_han_share": 0.575,
+    "diff_pct_points": 8.5,
+    "ci95_low_pct_points": -0.1,
+    "ci95_high_pct_points": 17.0,
+    "se": 0.044
+  }
+}

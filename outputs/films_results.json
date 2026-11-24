@@ -1,0 +1,307 @@
+{
+  "q1": {
+    "n_respondents": 1186,
+    "n_seen_any": 835,
+    "n_rankers": 836,
+    "n_complete_rankings": 834,
+    "n_ranked_but_not_seen_total": 1118,
+    "n_rankers_with_seen_count_0": 1,
+    "films": [
+      {
+        "episode": "ep1",
+        "title": "Episode I: The Phantom Menace",
+        "mean_rank": 3.733,
+        "median_rank": 4.0,
+        "sd_rank": 1.656,
+        "n_ranks": 835,
+        "n_ranked_first": 129,
+        "pct_ranked_first": 15.449,
+        "n_seen": 673,
+        "pct_seen_of_seen_any": 80.599,
+        "n_ranked_but_not_seen": 162
+      },
+      {
+        "episode": "ep2",
+        "title": "Episode II: Attack of the Clones",
+        "mean_rank": 4.087,
+        "median_rank": 4.0,
+        "sd_rank": 1.365,
+        "n_ranks": 836,
+        "n_ranked_first": 32,
+        "pct_ranked_first": 3.828,
+        "n_seen": 571,
+        "pct_seen_of_seen_any": 68.383,
+        "n_ranked_but_not_seen": 265
+      },
+      {
+        "episode": "ep3",
+        "title": "Episode III: Revenge of the Sith",
+        "mean_rank": 4.341,
+        "median_rank": 5.0,
+        "sd_rank": 1.4,
+        "n_ranks": 835,
+        "n_ranked_first": 36,
+        "pct_ranked_first": 4.311,
+        "n_seen": 550,
+        "pct_seen_of_seen_any": 65.868,
+        "n_ranked_but_not_seen": 286
+      },
+      {
+        "episode": "ep4",
+        "title": "Episode IV: A New Hope",
+        "mean_rank": 3.273,
+        "median_rank": 3.0,
+        "sd_rank": 1.826,
+        "n_ranks": 836,
+        "n_ranked_first": 204,
+        "pct_ranked_first": 24.402,
+        "n_seen": 607,
+        "pct_seen_of_seen_any": 72.695,
+        "n_ranked_but_not_seen": 229
+      },
+      {
+        "episode": "ep5",
+        "title": "Episode V: The Empire Strikes Back",
+        "mean_rank": 2.513,
+        "median_rank": 2.0,
+        "sd_rank": 1.579,
+        "n_ranks": 836,
+        "n_ranked_first": 289,
+        "pct_ranked_first": 34.569,
+        "n_seen": 758,
+        "pct_seen_of_seen_any": 90.778,
+        "n_ranked_but_not_seen": 78
+      },
+      {
+        "episode": "ep6",
+        "title": "Episode VI: Return of the Jedi",
+        "mean_rank": 3.048,
+        "median_rank": 3.0,
+        "sd_rank": 1.667,
+        "n_ranks": 836,
+        "n_ranked_first": 146,
+        "pct_ranked_first": 17.464,
+        "n_seen": 738,
+        "pct_seen_of_seen_any": 88.383,
+        "n_ranked_but_not_seen": 98
+      }
+    ],
+    "order_best_to_worst": [
+      "ep5",
+      "ep6",
+      "ep4",
+      "ep1",
+      "ep2",
+      "ep3"
+    ],
+    "most_liked": {
+      "episode": "ep5",
+      "title": "Episode V: The Empire Strikes Back",
+      "mean_rank": 2.513
+    },
+    "sensitivity_seen_all_six": {
+      "n_respondents": 471,
+      "n_rankers": 471,
+      "films": [
+        {
+          "episode": "ep1",
+          "title": "Episode I: The Phantom Menace",
+          "mean_rank": 4.238,
+          "n_ranks": 471
+        },
+        {
+          "episode": "ep2",
+          "title": "Episode II: Attack of the Clones",
+          "mean_rank": 4.327,
+          "n_ranks": 471
+        },
+        {
+          "episode": "ep3",
+          "title": "Episode III: Revenge of the Sith",
+          "mean_rank": 4.253,
+          "n_ranks": 470
+        },
+        {
+          "episode": "ep4",
+          "title": "Episode IV: A New Hope",
+          "mean_rank": 2.866,
+          "n_ranks": 471
+        },
+        {
+          "episode": "ep5",
+          "title": "Episode V: The Empire Strikes Back",
+          "mean_rank": 2.38,
+          "n_ranks": 471
+        },
+        {
+          "episode": "ep6",
+          "title": "Episode VI: Return of the Jedi",
+          "mean_rank": 2.932,
+          "n_ranks": 471
+        }
+      ],
+      "order_best_to_worst": [
+        "ep5",
+        "ep4",
+        "ep6",
+        "ep1",
+        "ep3",
+        "ep2"
+      ],
+      "most_liked": {
+        "episode": "ep5",
+        "title": "Episode V: The Empire Strikes Back",
+        "mean_rank": 2.38
+      },
+      "winner_changes": false
+    }
+  },
+  "q2": {
+    "n_fans": 552,
+    "n_nonfans": 284,
+    "n_fan_blank": 350,
+    "n_fan_rankers": 552,
+    "n_nonfan_rankers": 284,
+    "films": [
+      {
+        "episode": "ep1",
+        "title": "Episode I: The Phantom Menace",
+        "fan_mean_rank": 4.141,
+        "fan_n": 552,
+        "fan_ci95": [
+          4.012,
+          4.271
+        ],
+        "nonfan_mean_rank": 2.936,
+        "nonfan_n": 283,
+        "nonfan_ci95": [
+          2.754,
+          3.119
+        ],
+        "diff_fan_minus_nonfan": 1.205,
+        "welch_t": 10.562,
+        "welch_df": 564.121
+      },
+      {
+        "episode": "ep2",
+        "title": "Episode II: Attack of the Clones",
+        "fan_mean_rank": 4.342,
+        "fan_n": 552,
+        "fan_ci95": [
+          4.233,
+          4.451
+        ],
+        "nonfan_mean_rank": 3.592,
+        "nonfan_n": 284,
+        "nonfan_ci95": [
+          3.435,
+          3.748
+        ],
+        "diff_fan_minus_nonfan": 0.751,
+        "welch_t": 7.726,
+        "welch_df": 557.615
+      },
+      {
+        "episode": "ep3",
+        "title": "Episode III: Revenge of the Sith",
+        "fan_mean_rank": 4.417,
+        "fan_n": 551,
+        "fan_ci95": [
+          4.3,
+          4.535
+        ],
+        "nonfan_mean_rank": 4.194,
+        "nonfan_n": 284,
+        "nonfan_ci95": [
+          4.033,
+          4.355
+        ],
+        "diff_fan_minus_nonfan": 0.224,
+        "welch_t": 2.202,
+        "welch_df": 578.852
+      },
+      {
+        "episode": "ep4",
+        "title": "Episode IV: A New Hope",
+        "fan_mean_rank": 2.933,
+        "fan_n": 552,
+        "fan_ci95": [
+          2.785,
+          3.081
+        ],
+        "nonfan_mean_rank": 3.933,
+        "nonfan_n": 284,
+        "nonfan_ci95": [
+          3.731,
+          4.135
+        ],
+        "diff_fan_minus_nonfan": -1.0,
+        "welch_t": -7.821,
+        "welch_df": 583.428
+      },
+      {
+        "episode": "ep5",
+        "title": "Episode V: The Empire Strikes Back",
+        "fan_mean_rank": 2.333,
+        "fan_n": 552,
+        "fan_ci95": [
+          2.214,
+          2.453
+        ],
+        "nonfan_mean_rank": 2.863,
+        "nonfan_n": 284,
+        "nonfan_ci95": [
+          2.656,
+          3.07
+        ],
+        "diff_fan_minus_nonfan": -0.529,
+        "welch_t": -4.339,
+        "welch_df": 475.677
+      },
+      {
+        "episode": "ep6",
+        "title": "Episode VI: Return of the Jedi",
+        "fan_mean_rank": 2.83,
+        "fan_n": 552,
+        "fan_ci95": [
+          2.708,
+          2.951
+        ],
+        "nonfan_mean_rank": 3.472,
+        "nonfan_n": 284,
+        "nonfan_ci95": [
+          3.246,
+          3.698
+        ],
+        "diff_fan_minus_nonfan": -0.642,
+        "welch_t": -4.9,
+        "welch_df": 451.0
+      }
+    ],
+    "fan_top_film": {
+      "episode": "ep5",
+      "title": "Episode V: The Empire Strikes Back"
+    },
+    "nonfan_top_film": {
+      "episode": "ep5",
+      "title": "Episode V: The Empire Strikes Back"
+    },
+    "fan_order_best_to_worst": [
+      "ep5",
+      "ep6",
+      "ep4",
+      "ep1",
+      "ep2",
+      "ep3"
+    ],
+    "nonfan_order_best_to_worst": [
+      "ep5",
+      "ep1",
+      "ep6",
+      "ep2",
+      "ep4",
+      "ep3"
+    ],
+    "note": "Negative diff = fans rank the film better (lower). |welch_t| > ~1.96 suggests a difference beyond sampling noise at roughly the 5% level."
+  }
+}
