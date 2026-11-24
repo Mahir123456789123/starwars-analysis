@@ -21,10 +21,11 @@ curl -L -o data/raw/StarWars.csv https://raw.githubusercontent.com/fivethirtyeig
 python src/clean.py                # -> data/clean/starwars_clean.csv, and prints a cleaning summary
 python src/analysis_films.py       # Q1 and Q2 -> outputs/chart_film_ranking.png, chart_fans_vs_nonfans.png, films_results.json
 python src/analysis_shot_first.py  # Q3 -> outputs/chart_shot_first_by_gender.png, shot_first_results.json
-python -m pytest -v                # 57 tests that check the clean data against the raw file
+python src/analysis_characters.py  # Q4 -> outputs/chart_character_favourability.png, character_results.json
+python -m pytest -v                # 87 tests that check the clean data and Q4 scores against the raw file
 ```
 
-Each script finds its files from the repo root, so you can run it from any directory. Run the scripts in the order above, because both analyses read the clean CSV.
+Each script finds its files from the repo root, so you can run it from any directory. Run the scripts in the order above: the analyses read the clean CSV, and the Q4 tests read `outputs/character_results.json`.
 
 ## Layout
 
@@ -34,6 +35,7 @@ data/clean/starwars_clean.csv    1,186 respondents x 40 snake_case columns
 src/clean.py                     cleaning and validation
 src/analysis_films.py            Q1: most-liked film; Q2: fans vs non-fans
 src/analysis_shot_first.py       Q3: who shot first, by gender
+src/analysis_characters.py       Q4: most liked / disliked character (net favourability)
 tests/test_data.py               independent verifier: recomputes key numbers from the RAW file
 outputs/                         charts (PNG) and results (JSON)
 PLAN.md                          data problems found and how each is fixed

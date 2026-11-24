@@ -2,7 +2,7 @@
 
 **Data:** the FiveThirtyEight "Star Wars" survey, which has 1,186 respondents (`data/raw/StarWars.csv`).
 
-**Sources:** every number below comes from the output of `src/clean.py`, `src/analysis_films.py` and `src/analysis_shot_first.py`, or from `outputs/films_results.json` and `outputs/shot_first_results.json`. The numbers were also checked independently by `tests/test_data.py`, which passes 57 of 57 tests.
+**Sources:** every number below comes from the output of `src/clean.py`, `src/analysis_films.py`, `src/analysis_shot_first.py` and `src/analysis_characters.py`, or from the JSON files in `outputs/`. The numbers were also checked independently by `tests/test_data.py`, which passes 87 of 87 tests.
 
 **Who answered what:** 835 respondents ticked at least one film as seen. 836 ranked at least one film: 834 gave a complete 1–6 ranking and 2 ranked 5 of the 6 films.
 
@@ -83,6 +83,35 @@ The 8 answerers with no gender recorded are excluded from this comparison.
   - χ² = 3.81, df = 1, p = 0.051, V = 0.086.
 - **Conclusion:** men and women who know the scene answer much the same, and both say Han. The real gender difference is in familiarity with the question.
 
+## Q4. Which character is the most liked and the most disliked?
+
+**Most liked: Han Solo**, with a net favourability of **+92.4**. It is a near tie at the top: Luke Skywalker scores +91.5 and Obi-Wan Kenobi +91.0. **Most disliked: Jar Jar Binks**, the only character with a negative score (**−9.0**). He also has the largest unfavourable share (43.0%).
+
+**How the score works:** net favourability = (% very or somewhat favourable) − (% somewhat or very unfavourable). The percentages are out of the people who *rated* the character, meaning they gave one of the five opinion answers, neutral included. "Unfamiliar (N/A)" and blanks don't count as ratings; the unfamiliar share is reported separately.
+
+![Character favourability](outputs/chart_character_favourability.png)
+
+| Character | Net | Favourable | Unfavourable | Neutral | n rated | Unfamiliar (% of answerers) |
+|---|---|---|---|---|---|---|
+| Han Solo | **+92.4** | 93.5% | 1.1% | 5.4% | 814 | 1.8% |
+| Luke Skywalker | +91.5 | 93.5% | 1.9% | 4.6% | 825 | 0.7% |
+| Obi-Wan Kenobi | +91.0 | 92.8% | 1.9% | 5.3% | 808 | 2.1% |
+| Princess Leia | +89.8 | 92.0% | 2.2% | 5.8% | 823 | 1.0% |
+| Yoda | +89.8 | 91.8% | 2.0% | 6.2% | 816 | 1.2% |
+| R2-D2 | +89.1 | 91.1% | 2.0% | 7.0% | 820 | 1.2% |
+| C-3PO | +82.9 | 86.6% | 3.7% | 9.7% | 812 | 1.8% |
+| Anakin Skywalker | +50.8 | 66.7% | 15.8% | 17.5% | 771 | 6.3% |
+| Lando Calrissian | +43.8 | 54.3% | 10.6% | 35.1% | 672 | 18.0% |
+| Padme Amidala | +39.8 | 54.0% | 14.2% | 31.8% | 650 | 20.1% |
+| Darth Vader | +28.2 | 58.9% | 30.8% | 10.3% | 816 | 1.2% |
+| Boba Fett | +22.1 | 42.8% | 20.7% | 36.5% | 680 | 16.3% |
+| Emperor Palpatine | +9.3 | 38.4% | 29.2% | 32.4% | 658 | 19.2% |
+| Jar Jar Binks | **−9.0** | 34.0% | 43.0% | 23.0% | 712 | 13.3% |
+
+- **The top seven are all heroes.** Han, Luke, Obi-Wan, Leia, Yoda, R2-D2 and C-3PO each score above +80 and are almost universally known (≤ 2.1% unfamiliar). The gaps between the top six (+89.1 to +92.4) are small, so they are effectively tied; Han leads by less than one point.
+- **Darth Vader is the most polarising.** He is both widely liked (58.9%) and widely disliked (30.8%), which puts him at +28.2. That likely reflects admiration for a villain rather than dislike.
+- **Less-known characters get thinner, more neutral ratings.** Padme (20.1% unfamiliar), Palpatine (19.2%), Lando (18.0%) and Boba Fett (16.3%) have fewer ratings, and about a third of those who did rate them were neutral.
+
 ---
 
 ## Data problems fixed
@@ -113,4 +142,5 @@ The full list, with evidence for each problem, is in `PLAN.md`; the cleaning cod
 - **Survey bias:** this is an online SurveyMonkey panel run by FiveThirtyEight in 2014. It is not a probability sample, and the Star Wars questions were answered only by the respondents who had seen a film. Results describe these respondents, not the general population. The data has no weights, and the CIs and tests assume simple random sampling.
 - **Timing:** the survey predates Episodes VII–IX, so the "most liked" result covers only Episodes I–VI.
 - **Mean rank on an ordinal scale:** mean rank treats the distance between each rank as equal. The share of #1 votes and the medians point the same way (Empire first).
+- **Favourability measures sentiment, not character quality:** for villains, "unfavourable" may mean "a good villain I dislike", so the scores for Vader, Palpatine and Boba Fett don't compare directly with the heroes'. The net score also treats "somewhat" and "very" equally and ignores neutral answers in the numerator. Between 355 and 374 respondents left each character blank, mostly people who hadn't seen a film.
 - **Possible misreading of the shot-first question:** "Don't understand" may also absorb people who know the scene but not the "Han shot first" controversy.
